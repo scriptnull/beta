@@ -991,6 +991,26 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
+  - name: build_aarch64_u16cpp
+    type: runSh
+    runtime:
+      architecture: aarch64
+      os: Ubuntu_16.04
+      container: false
+    steps:
+      - IN: config_repo
+        switch: off
+      - IN: aarch64_u16_img
+      - IN: aarch64_u16cpp_repo
+      - IN: ship_dh_cli_v2
+      - TASK:
+        - script: ./IN/config_repo/gitRepo/buildImage.sh u16cpp drydockaarch64
+      - OUT: aarch64_u16cpp_img
+    on_success:
+      - script: echo 'on success !!!!!'
+    on_failure:
+      - script: echo 'Failed job .... :('
+
   ###########################################
   # START Drydockaarch64 image builds
   ###########################################

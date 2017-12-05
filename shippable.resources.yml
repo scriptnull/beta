@@ -897,6 +897,22 @@ resources:
     seed:
       versionName: tip
 
+  - name: aarch64_u16cpp_repo
+    type: gitRepo
+    integration: ric03uec-github
+    pointer:
+      sourceName: dry-dock-aarch64/u16cpp
+      branch: master
+      buildOnTagPush: true
+
+  - name: aarch64_u16cpp_img
+    type: image
+    integration: shipDH
+    pointer:
+      sourceName: "drydockaarch64/u16cpp"
+    seed:
+      versionName: tip
+
   ###############################
   # END drydockaarch64 resources
   ###############################
