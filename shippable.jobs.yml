@@ -971,6 +971,22 @@ jobs:
     on_failure:
       - script: echo 'Failed job .... :('
 
+  - name: build_aarch64_microbase
+    type: runSh
+    steps:
+      - IN: config_repo
+        switch: off
+      - IN: aarch64_microbase_repo
+      - IN: aarch64_u16_img
+      - IN: ship_dh_cli_v2
+      - TASK:
+        - script: ./IN/config_repo/gitRepo/buildImage.sh microbase drydockaarch64
+      - OUT: aarch64_microbase_img
+    on_success:
+      - script: echo 'on success !!!!!'
+    on_failure:
+      - script: echo 'Failed job .... :('
+
   - name: build_aarch64_u16pyt
     type: runSh
     runtime:

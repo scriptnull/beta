@@ -881,6 +881,21 @@ resources:
     seed:
       versionName: tip
 
+  - name: aarch64_microbase_repo
+    type: gitRepo
+    integration: ric03uec-github
+    pointer:
+      sourceName: dry-dock-aarch64/microbase
+      branch: master
+
+  - name: aarch64_microbase_img
+    type: image
+    integration: shipDH
+    pointer:
+      sourceName: "drydockaarch64/microbase"
+    seed:
+      versionName: master
+
   - name: aarch64_u16pyt_repo
     type: gitRepo
     integration: ric03uec-github
