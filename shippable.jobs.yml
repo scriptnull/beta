@@ -312,7 +312,7 @@ jobs:
         scopes:
           - ecr
       - IN: ship_dh_cli_v2
-      - IN: microbase_img
+      - IN: aarch64_microbase_img
       - TASK:
         - script: ./IN/reqProc_repo/gitRepo/build.sh aarch64 Ubuntu_16.04 drydockaarch64 reqproc
 
